@@ -1,0 +1,18 @@
+﻿.glyphicon-thumbs-up {
+    cursor: pointer
+}
+
+.glyphicon-heart-empty {
+    cursor: pointer
+}
+
+.active {
+    color:red
+}
+
+.disactive {
+    color:black
+}
+.postTitle{
+    color: red
+}

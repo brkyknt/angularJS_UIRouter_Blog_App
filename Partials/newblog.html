@@ -1,0 +1,16 @@
+﻿<h1>New Blog</h1>
+
+<form name="frm" ng-submit="NewBlog()">
+
+    <input type="text"  class="form-control" ng-model="title" required placeholder="Title.." /><br />
+    <input type="text"  class="form-control" ng-model="author" required placeholder="Author.." /><br />
+    <input type="text"  class="form-control" ng-model="text" required placeholder="Text Message.." /><br />
+    <br />
+    <button class="btn btn-dark" ng-disabled="frm.$invalid">
+    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Send
+    </button>
+    <br /><br />
+    <p style="font-style:italic" class="alert alert-success" ng-model="alert_success" ng-show="alert_success">Your message has been successfully sent.</p>
+
+
+</form>

@@ -1,0 +1,25 @@
+﻿    <h1 name="postTitle" class="h1">{{postControl.title}}</h1> 
+
+    <p> <span ng-click="likeBlog($event)" ng-class ="active" class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> {{postControl.like}}</p>
+
+    <h4 class="h4"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{postControl.author}}</h4>
+
+    <p>{{postControl.text}}</p>
+
+    <hr style="color:#2f4f4f"/>
+
+    <h4 class="h4"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  Yorumlar</h4>
+
+    <ul>
+        <li ng-repeat="item in postControl.comments | orderBy : '-like'">
+            {{item.comment}}<br />
+            <span ng-click="likeComment(item)" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>   {{item.like}}
+        </li>
+    </ul>
+
+    <form name="frmComment" ng-submit="postComment()">
+        <input type="text" class="form-control" ng-model="comment" placeholder="Add Comment.." required /><br />
+        <button class="btn btn-info" ng-disabled="frmComment.$invalid"> 
+          <span class="glyphicon glyphicon-comment"></span> Send Comment
+        </button>
+    </form>
